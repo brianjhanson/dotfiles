@@ -1,0 +1,43 @@
+# This is Git's per-user configuration file.
+[core]
+# Please adapt and uncomment the following lines:
+	user = Brian Hanson
+	email = brian@brianhanson.net
+	filemode = false
+	excludesfile = /Users/brianhanson/.gitignore_global
+	editor = vim
+[alias]
+  prune = fetch --prune
+  undo = reset --soft HEAD^
+  stash-all = stash save --include-untracked
+[user]
+	name = Brian Hanson
+	email = brian@brianhanson.net
+[filter "lfs"]
+	clean = git-lfs clean %f
+	smudge = git-lfs smudge %f
+	required = true
+[rerere]
+	enabled = 1
+[merge]
+	conflictstyle = diff3
+[status]
+  showUntrackedFiles = all
+[diff]
+  tool = vimdiff3
+[difftool]
+  prompt = false
+[help]
+	autocorrect = 1
+[commit]
+	template = /Users/brianhanson/.stCommitMsg
+[icdiff]
+	options = --highlight --line-numbers
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
+[mergetool "sourcetree"]
+	cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
+[push]
+	followTags = true
