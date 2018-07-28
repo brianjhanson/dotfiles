@@ -78,10 +78,9 @@ export PATH="$HOME:/Applications/MAMP/bin/php/php7.1.12/bin:$PATH"
 
 alias gitpurge="git branch --merged | grep -v '\*' | grep -v master | grep -v dev | xargs -n 1 git branch -d"
 alias cdev="cd ~/Development"
-alias reload=". ~/.zshrc"
+alias reloadconfig=". ~/.zshrc"
 alias vhost="subl /Applications/MAMP/conf/apache/extra/httpd-vhosts.conf"
 alias editvhosts="subl /Applications/MAMP/conf/apache/extra/httpd-vhosts.conf"
-alias zshconfig="subl ~/.zshrc"
 # alias theme="cd wp-content/themes"
 alias gbl="git branch --sort=committerdate"
 alias mamp="/Applications/MAMP/bin/"
@@ -101,33 +100,38 @@ export N_PREFIX="$HOME/n"; [[ :$PATH: == *":$N_PREFIX/bin:"* ]] || PATH+=":$N_PR
 
 source "/Users/brianhanson/.oh-my-zsh/custom/themes/spaceship.zsh-theme"
 SPACESHIP_BATTERY_SHOW=false
+
 # ORDER
 SPACESHIP_PROMPT_ORDER=(
-  time     #
-  vi_mode  # these sections will be
-  user     # before prompt char
-  host     #
-  char
-  dir
-  git
-  node
-  ruby
-  xcode
-  swift
-  golang
-  venv
-  pyenv
+  time          # Time stampts section
+  user          # Username section
+  dir           # Current directory section
+  host          # Hostname section
+  git           # Git section (git_branch + git_status)
+  package       # Package version
+  node          # Node.js section
+  ruby          # Ruby section
+  xcode         # Xcode section
+  swift         # Swift section
+  golang        # Go section
+  php           # PHP section
+  aws           # Amazon Web Services section
+  exec_time     # Execution time
+  line_sep      # Line break
+  battery       # Battery level and status
+  exit_code     # Exit code section
+  char          # Prompt character
 )
 
 # USER
-SPACESHIP_USER_PREFIX="" # remove `with` before username
-SPACESHIP_USER_SUFFIX="" # remove space before host
+# SPACESHIP_USER_PREFIX="" # remove `with` before username
+# SPACESHIP_USER_SUFFIX="" # remove space before host
 
 # HOST
 # Result will look like this:
 #   username@:(hostname)
-SPACESHIP_HOST_PREFIX="@:("
-SPACESHIP_HOST_SUFFIX=") "
+# SPACESHIP_HOST_PREFIX="@:("
+# SPACESHIP_HOST_SUFFIX=") "
 
 # DIR
 SPACESHIP_DIR_PREFIX='' # disable directory prefix, cause it's not the first section
@@ -135,50 +139,50 @@ SPACESHIP_DIR_TRUNC='1' # show only last directory
 
 # GIT
 # Disable git symbol
-SPACESHIP_GIT_SYMBOL="" # disable git prefix
-SPACESHIP_GIT_BRANCH_PREFIX="" # disable branch prefix too
-# Wrap git in `git:(...)`
-SPACESHIP_GIT_PREFIX='git:('
-SPACESHIP_GIT_SUFFIX=") "
-SPACESHIP_GIT_BRANCH_SUFFIX="" # remove space after branch name
-# Unwrap git status from `[...]`
-SPACESHIP_GIT_STATUS_PREFIX=""
-SPACESHIP_GIT_STATUS_SUFFIX=""
+# SPACESHIP_GIT_SYMBOL="" # disable git prefix
+# SPACESHIP_GIT_BRANCH_PREFIX="" # disable branch prefix too
+# # Wrap git in `git:(...)`
+# SPACESHIP_GIT_PREFIX='git:('
+# SPACESHIP_GIT_SUFFIX=") "
+# SPACESHIP_GIT_BRANCH_SUFFIX="" # remove space after branch name
+# # Unwrap git status from `[...]`
+# SPACESHIP_GIT_STATUS_PREFIX=""
+# SPACESHIP_GIT_STATUS_SUFFIX=""
 
-# NODE
-SPACESHIP_NODE_PREFIX="node:("
-SPACESHIP_NODE_SUFFIX=") "
-SPACESHIP_NODE_SYMBOL=""
+# # NODE
+# SPACESHIP_NODE_PREFIX="node:("
+# SPACESHIP_NODE_SUFFIX=") "
+# SPACESHIP_NODE_SYMBOL=""
 
-# RUBY
-SPACESHIP_RUBY_PREFIX="ruby:("
-SPACESHIP_RUBY_SUFFIX=") "
-SPACESHIP_RUBY_SYMBOL=""
+# # RUBY
+# SPACESHIP_RUBY_PREFIX="ruby:("
+# SPACESHIP_RUBY_SUFFIX=") "
+# SPACESHIP_RUBY_SYMBOL=""
 
-# XCODE
-SPACESHIP_XCODE_PREFIX="xcode:("
-SPACESHIP_XCODE_SUFFIX=") "
-SPACESHIP_XCODE_SYMBOL=""
+# # XCODE
+# SPACESHIP_XCODE_PREFIX="xcode:("
+# SPACESHIP_XCODE_SUFFIX=") "
+# SPACESHIP_XCODE_SYMBOL=""
 
-# SWIFT
-SPACESHIP_SWIFT_PREFIX="swift:("
-SPACESHIP_SWIFT_SUFFIX=") "
-SPACESHIP_SWIFT_SYMBOL=""
+# # SWIFT
+# SPACESHIP_SWIFT_PREFIX="swift:("
+# SPACESHIP_SWIFT_SUFFIX=") "
+# SPACESHIP_SWIFT_SYMBOL=""
 
-# GOLANG
-SPACESHIP_GOLANG_PREFIX="go:("
-SPACESHIP_GOLANG_SUFFIX=") "
-SPACESHIP_GOLANG_SYMBOL=""
+# # GOLANG
+# SPACESHIP_GOLANG_PREFIX="go:("
+# SPACESHIP_GOLANG_SUFFIX=") "
+# SPACESHIP_GOLANG_SYMBOL=""
 
 
-# VENV
-SPACESHIP_VENV_PREFIX="venv:("
-SPACESHIP_VENV_SUFFIX=") "
+# # VENV
+# SPACESHIP_VENV_PREFIX="venv:("
+# SPACESHIP_VENV_SUFFIX=") "
 
-# PYENV
-SPACESHIP_PYENV_PREFIX="python:("
-SPACESHIP_PYENV_SUFFIX=") "
-SPACESHIP_PYENV_SYMBOL=""
+# # PYENV
+# SPACESHIP_PYENV_PREFIX="python:("
+# SPACESHIP_PYENV_SUFFIX=") "
+# SPACESHIP_PYENV_SYMBOL=""
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm

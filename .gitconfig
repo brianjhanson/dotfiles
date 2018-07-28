@@ -5,7 +5,7 @@
 	email = brian@brianhanson.net
 	filemode = false
 	excludesfile = /Users/brianhanson/.gitignore_global
-	editor = vim
+	editor = vim +2
 [alias]
   prune = fetch --prune
   undo = reset --soft HEAD^
@@ -35,7 +35,7 @@
 	options = --highlight --line-numbers
 [difftool "sourcetree"]
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
-	path = 
+	path =
 [mergetool "sourcetree"]
 	cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
 	trustExitCode = true
