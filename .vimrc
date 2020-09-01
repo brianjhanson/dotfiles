@@ -27,6 +27,8 @@ set incsearch
 " Don't redraw while executing macros (good performance config)
 set lazyredraw 
 
+set colorcolumn=80
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Colors and Fonts
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -78,4 +80,11 @@ set tw=500
 
 set ai "Auto indent
 set si "Smart indent
-set wrap "Wrap lines
+set nowrap "Don't wrap lines
+set noerrorbells "No error bells
+
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Keymaps
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+source ~/.vimrc.keymap

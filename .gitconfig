@@ -6,6 +6,7 @@
 	filemode = false
 	excludesfile = /Users/brianhanson/.gitignore_global
 	editor = vim +2
+	autocrlf = input
 [alias]
   prune = fetch --prune
   undo = reset --soft HEAD^
@@ -41,3 +42,7 @@
 	trustExitCode = true
 [push]
 	followTags = true
+[pager]
+	branch = false
+[mergetool]
+	keepBackup = true

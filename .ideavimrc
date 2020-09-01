@@ -1,0 +1,17 @@
+source ~/.vimrc.keymap
+
+set clipboard+=unnamed
+
+set surround
+set easymotion
+
+" Split pane navigation
+nmap <leader>k :action NextSplitter<cr>
+nmap <leader>j :action PrevSplitter<cr>
+
+" Splits manipulation
+nmap <leader>hs :action SplitHorizontally<cr>
+nmap <leader>vs :action SplitVertically<cr>
+
+" Terminal
+nmap <leader>T :action ActivateTerminalToolWindow<cr>
